@@ -1,0 +1,9 @@
+module.exports = {
+    "devolopment":{
+        "username": "root",
+        "password": "6660711",
+        "database": "estante",
+        "host": "192.168.0.279",
+        "dialect": "mysql"
+    }
+}
