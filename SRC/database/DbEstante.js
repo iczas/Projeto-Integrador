@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const { Sequelize } = require('sequelize')
+const { Sequelize,DataTypes } = require('sequelize')
 
 const DbBlog = new Sequelize(
     // Nome do banco de dados
@@ -10,10 +10,25 @@ const DbBlog = new Sequelize(
     // Senha
     process.env.DB_SENHA,
     // Tecnologia / Aonde está o localizado
+   
     {
         host: process.env.DB_HOST,
         dialect: 'mysql'
+    })
+
+const usuarios = database.define('usuarios', {
+        nomeUsuario: DataTypes.STRING,
+        senha: DataTypes.STRING 
+    })
+
+   
+
+    try{
+        DatabaseError.authenticate()
+        database.sync()
     }
-)
+    catch(error){
+        console.error(error)
+    }
 
 module.exports = DbEstante
